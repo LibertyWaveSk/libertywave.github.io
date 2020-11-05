@@ -10,8 +10,6 @@ body#page-index {
   height: 100vh;
   font-family: "Saira", sans-serif;
   font-weight: 700;
-  background: url(img/bg.svg);
-  background-size: cover;
 }
 
 #page-index .wrapper {
@@ -104,4 +102,93 @@ body#page-index {
   font-family: "Courgette", cursive;
   transition: font-size 1s;
   margin-top: 3.5em;
+}
+
+
+#page-index .bgwrapper {
+  display: grid;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+
+#page-index .background {
+  overflow: hidden;
+height: 550px;
+width: 100%;
+position: absolute;
+background-size: cover;
+
+    background-image: url("background/background.svg");
+   top: 0;
+   bottom: 1;
+   left:0;
+   right: 0;
+   opacity:1;
+   margin: auto;  
+}
+
+#page-index .bgmoon {
+  overflow: hidden;
+height: 200px;
+width: 200px;
+position: absolute;
+background-size: cover;
+
+    background-image: url("background/moon.svg");
+   top: 20%;
+   bottom: 1;
+   left: 40%;
+   right: 0;
+   opacity:1;
+   margin: auto;  
+}
+
+#page-index .blackhills {
+    overflow: hidden;
+height: 400px;
+width: 100%;
+background-image: url("background/black-hills.svg");
+background-repeat: no-repeat;
+background-size: cover;
+  position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   opacity:1;
+   margin: auto;  
+}
+
+#page-index .purplehills {
+    overflow: hidden;
+height: 500px;
+width: 100%;
+background-image: url("background/purple-hills.svg");
+background-repeat: no-repeat;
+background-size: cover;
+  position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   opacity:1;
+   margin: auto;  
+}
+
+#page-index .scanlines {
+    overflow: hidden;
+height: 100%;
+width: 100%;
+background-image: url("background/scanlines.svg");
+background-repeat: no-repeat;
+background-size: cover;
+  position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   opacity:1;
+   margin: auto;  
 }

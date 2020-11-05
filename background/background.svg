@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="193.52382mm"
+   height="58.359528mm"
+   viewBox="0 0 193.52382 58.359528"
    version="1.1"
    id="svg897"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -22,8 +22,8 @@
        y1="0"
        gradientTransform="matrix(0.18354582,0,0,0.05535054,7.5595199,92.64717)"
        id="linear-gradient"
-       x1="527.18118"
-       x2="527.18118"
+       x1="527.18115"
+       x2="527.18115"
        y2="1054.3624"
        gradientUnits="userSpaceOnUse">
       <stop
@@ -42,16 +42,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-64.285714"
-     inkscape:cy="560"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="27.469275"
+     inkscape:cy="152.82581"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
+     inkscape:window-width="1280"
+     inkscape:window-height="961"
+     inkscape:window-x="3832"
+     inkscape:window-y="48"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata894">
@@ -68,7 +68,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-7.5595188,-92.647171)">
     <rect
        y="92.647171"
        x="7.5595188"

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+body#page-index {
   margin: 0;
   background: #000;
   height: 100vh;
@@ -12,14 +12,14 @@ body {
   font-weight: 700;
 }
 
-img {
+#page-index img {
   position: fixed;
   width: 100%;
   top: 30%;
   transition: top 1s;
 }
 
-.wrapper {
+#page-index .wrapper {
   display: grid;
   place-items: center;
   position: absolute;
@@ -28,12 +28,12 @@ img {
   z-index: 10;
 }
 
-.graph-container {
+#page-index .graph-container {
   overflow: hidden;
   height: 100vh;
 }
 
-.graph-container .graph {
+#page-index .graph-container .graph {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
   background-size: 4em 2em, 4em 4em;
   background-color: black;
@@ -45,8 +45,8 @@ img {
   filter: blur(1.1px);
 }
 
-.graph-container .graph:after {
-  content: " ";
+#page-index .graph-container .graph:after {
+  content: ' ';
   display: block;
   background: #eeaeca;
   background: radial-gradient(circle, rgba(238, 174, 202, 0) 0%, #94bbe9 30%);
@@ -57,15 +57,16 @@ img {
 @keyframes animatedBackground {
   from {
     background-position: 0 0;
-    transform: perspective(200px) rotateX(45deg) scale(2);
+    transform: perspective(200px) rotateX(45deg) scale(2); /* Done so browser would force re-render allowing us to animate background */
   }
+
   to {
-    background-position: 0 -100%;
+    background-position: 0 -100%; /* Scrolling */
     transform: perspective(199px) rotateX(45deg) scale(2);
   }
 }
 
-h1 {
+#page-index h1 {
   background: linear-gradient(to bottom, #ebf1f6 0%, #abd3ee 50%, #859ee2 51%, #d5ebfb 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ebf1f6", endColorstr="#d5ebfb",GradientType=0 );
@@ -78,7 +79,7 @@ h1 {
   position: absolute;
 }
 
-h1:after {
+#page-index h1:after {
   background: none;
   content: attr(data-text);
   left: 0;
@@ -87,7 +88,7 @@ h1:after {
   z-index: -3;
 }
 
-h1:before {
+#page-index h1:before {
   content: " ";
   position: absolute;
   top: -1em;
@@ -99,7 +100,7 @@ h1:before {
   z-index: -4;
 }
 
-h2 {
+#page-index h2 {
   text-shadow: 1px -1px 0 rgba(255, 255, 255, 0.5), 2px 1px 2px rgba(255, 0, 255, 0.85), -3px -2px 3px rgba(0, 0, 255, 0.85), 1px -2px 0 rgba(255, 255, 255, 0.8);
   color: #ff00ea;
   font-size: 2em;

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="474.831" height="418.195" viewBox="0 0 474.831 418.195">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.09" y1="0.294" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#da71ff"/>
+      <stop offset="0.447" stop-color="#bd04ff"/>
+      <stop offset="0.473" stop-color="#eebcff"/>
+      <stop offset="1" stop-color="#e0f"/>
+    </linearGradient>
+    <filter id="triangle" x="0" y="0" width="474.831" height="418.195" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8.5" result="blur"/>
+      <feFlood flood-color="#c500ff"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#triangle)">
+    <path id="triangle-2" data-name="triangle" d="M317.831,550.7h0L106,183.6l423.831-.1-212,367.195ZM516.939,190.759l-396.547.839L317.939,535.436Z" transform="translate(-80.5 -158)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

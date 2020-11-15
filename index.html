@@ -28,10 +28,130 @@
         <div class="inner"></div>
     </div>
 
+    <div id="waves">
+        <script>
+            var speed = 0.1;                        // Wave animation speed
+            var wavePoints = 4;                     // How many point will be used to compute our wave
+            var resonanceCoeficient = 0.1;
 
+            var points = [];
 
+            function calculateWavePoints(factor, waveHeight, waveDelta, waveWidth, totalHeight, wavePoints) {
+                const points = [];
 
+                let sinHeight = waveHeight;
+                for (var i = 0; i <= wavePoints ; i++) {
+                    let x = i/wavePoints * waveWidth;
+                    let sinSeed = (factor + (i + i % wavePoints)) * speed * 100;
+                    let prev = waveHeight - sinHeight;
+                    sinHeight = Math.sin(sinSeed / 100) * waveDelta + (prev / waveDelta) * resonanceCoeficient;
+                    let yPos = Math.sin(sinSeed / 100) * sinHeight  + waveHeight;
+                    if (i == wavePoints) {
+                      yPos = totalHeight;
+                      x += 20;
+                    }
 
+                    points.push({x: x, y: yPos});
+                }
 
+              return points;
+            }
+
+            function buildPath(points, width, height) {
+              var SVGString = 'M ' + points[0].x + ' ' + points[0].y;
+
+              var cp0 = {
+                x: (points[1].x - points[0].x) / 2,
+                y: (points[1].y - points[0].y) + points[0].y + (points[1].y - points[0].y)
+              };
+
+              SVGString += ' C ' + cp0.x + ' ' + cp0.y + ' ' + cp0.x + ' ' + cp0.y + ' ' + points[1].x + ' ' + points[1].y;
+
+              var prevCp = cp0;
+              var inverted = -1;
+
+              for (var i = 1; i < points.length-1; i++) {
+                var cpLength = Math.sqrt(prevCp.x * prevCp.x + prevCp.y * prevCp.y);
+                var cp1 = {
+                  x: (points[i].x - prevCp.x) + points[i].x,
+                  y: (points[i].y - prevCp.y) + points[i].y
+                };
+
+                SVGString += ' C ' + cp1.x + ' ' + cp1.y + ' ' + cp1.x + ' ' + cp1.y + ' ' + points[i+1].x + ' ' + points[i+1].y;
+                prevCp = cp1;
+                inverted = -inverted;
+              };
+              
+              SVGString += ' L ' + width + ' ' + height;
+              SVGString += ' L 0 ' + height + ' Z';
+              return SVGString;
+            }
+
+            var lastUpdate;
+            var totalTime = 0;
+
+            function tick() {
+              var now = window.Date.now();
+
+              if (lastUpdate) {
+                var elapsed = (now-lastUpdate) / 1000;
+                lastUpdate = now;
+
+                totalTime += elapsed;
+                
+                const waves = document.getElementsByClassName('wave');
+                let i = 0;
+                while (waves.item(i)) {
+                    let wave = waves.item(i);
+
+                    const container = wave.parentNode;
+                    const width = container.clientWidth;
+                    const height = container.clientHeight;
+
+                    let factor = totalTime * Math.PI * 1/ (i+1);
+
+                    wave.setAttribute('d',
+                        buildPath(
+                            calculateWavePoints(
+                                factor,
+                                height - 200,
+                                100,
+                                width,
+                                height,
+                                parseInt(wave.getAttribute("points")) || 4
+                            ),
+                            width,
+                            height,
+                        )
+                    );
+
+                    i++;
+                }
+              } else {
+                lastUpdate = now;
+              }
+              
+              window.requestAnimationFrame(tick);
+            };
+
+            (() => tick())();
+        </script>
+
+        <svg width="100%" height="100%" style="bottom: 40vh" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave" points="8" d="" fill="#444"/>
+        </svg>
+        <svg width="90%" height="100%" style="bottom: 30vh" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave" points="7" d="" fill="#333"/>
+        </svg>
+        <svg width="80%" height="100%" style="bottom: 20vh" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave" points="6" d="" fill="#222"/>
+        </svg>
+        <svg width="70%" height="100%" style="bottom: 10vh" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave" points="5" d="" fill="#111"/>
+        </svg>
+        <svg width="60%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <path class="wave" points="4" d="" fill="#000"/>
+        </svg>
+    </div>
 </body>
 </html>

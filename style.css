@@ -170,3 +170,16 @@
   right: 0;
   z-index: 10;
 }
+
+#page-index #waves {
+  position: absolute;
+  left: 0;
+  bottom: 0
+  z-index: 20;
+  width: 20vw;
+  height: 100vh;
+}
+
+#page-index #waves > svg {
+  position: absolute;
+}

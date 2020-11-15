@@ -5,35 +5,39 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
 <body id="page-index">
-<div class="scanlines">
-    <!-- Background -->
-    <div class="bgwrapper">
-        <div class="background"></div>
-        <div class="bgmoon"></div>
-        <div class="purplehills"></div>
-        <div class="blackhills"></div>
-        <div class="scanlines"></div>
+    <div class="scanlines">
+        <!-- Background -->
+        <div class="bgwrapper" id="scene">
+            <div class="background"></div>
+            <div data-depth="0.4" class="bgmoon"></div>
+            <div data-depth="0.2" class="purplehills"></div>
+            <div data-depth="0.1" class="blackhills"></div>
+        </div>
+        <!-- Background -->
+
+
+    	<div class="wrapper">
+            <h1 data-text="LibertyWave">LibertyWave</h1>
+            <h2 data-text="SoundTrack">SoundTrack</h2>
+        </div>
+
+        <div class="graph-container">
+            <div class="graph"></div>
+            <div class="inner"></div>
+        </div>
     </div>
-    <!-- Background -->
 
-
-	<div class="wrapper">
-        <h1 data-text="LibertyWave">LibertyWave</h1>
-        <h2 data-text="SoundTrack">SoundTrack</h2>
-    </div>
-
-    <div class="graph-container">
-        <div class="graph"></div>
-        <div class="inner"></div>
-    </div>
-    
-</div>
-
-
-
-
-
+    <script>
+        (() => {
+            const scene = document.getElementById('scene');
+            const parallaxInstance = new Parallax(scene,
+            {
+                relativeInput: true
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -59,11 +59,7 @@ body #page-index {
   width: 100%;
   height: 100vh;
   z-index: 10;
-  font-size: 2em;
-}
-
-#page-index #title-wrapper h1 {
-  font-size: 2.4em;
+  font-size: 3rem;
 }
 
 #page-index .graph-container {
@@ -208,6 +204,7 @@ body #page-index {
   top: 0;
   right: 0;
   z-index: 40;
+  pointer-events: none;
 }
 
 .scanlines {
@@ -271,17 +268,56 @@ body #page-index {
   grid-template-columns: repeat(12, 1fr);
 }
 
-#about-us.container {
+#content.container {
   padding-top: 2em;
   padding: 0 5em;
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)
 }
 
-#about-us #introduction {
+#content #introduction {
   grid-column: span 12;
 }
 
-#about-us h3 {
+#content h3 {
   font-family: "Whitney Bold";
   font-size: 3em;
+}
+
+#menu {
+  position: absolute;
+  right: 2em;
+  z-index: 20;
+  display: grid;
+  justify-content: right;
+  align-content: center;
+  grid-auto-flow: column;
+  grid-gap: 1em;
+}
+
+#menu > a {
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 700px) {
+  #page-index #title-wrapper {
+    font-size: 2rem;
+  }
+
+  #menu {
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-content: center;
+    grid-auto-flow: row;
+    grid-gap: 0;
+  }
+  
+  #menu>a {
+    padding-top: 0;
+  }
 }

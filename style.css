@@ -2,24 +2,24 @@
 @import url("https://fonts.googleapis.com/css?family=Courgette&display=swap");
 
 @font-face {
-  font-family: 'Whitney Medium';
+  font-family: 'Roboto Medium';
   font-style: normal;
   font-weight: normal;
-  src: local('Whitney Medium'), url('fonts/whitneymedium.woff') format('woff');
+  src: local('Roboto Medium'), url('fonts/Roboto-Medium.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Whitney Bold';
+  font-family: 'Roboto Bold';
   font-style: normal;
   font-weight: normal;
-  src: local('Whitney Bold'), url('fonts/whitneybold.woff') format('woff');
+  src: local('Roboto Bold'), url('fonts/Roboto-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Whitney Book Regular';
+  font-family: 'Roboto Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Whitney Book Regular'), url('fonts/whitneybook.woff') format('woff');
+  src: local('Roboto Regular'), url('fonts/Roboto-Regular.ttf') format('truetype');
 }
 
 
@@ -30,7 +30,7 @@
 body {
   margin: 0;
   background: #36393F;
-  font-family: "Whitney Book Regular";
+  font-family: "Roboto Regular";
   color: rgb(220, 221, 222);
   font-size: 18px;
 }
@@ -279,7 +279,7 @@ body #page-index {
 }
 
 #content h3 {
-  font-family: "Whitney Bold";
+  font-family: "Roboto Regular";
   font-size: 3em;
 }
 
@@ -301,6 +301,18 @@ body #page-index {
   font-size: 1.2em;
 }
 
+#content {
+  font-size: 1.1em;
+}
+
+#content h1 {
+  font-size: 3em;
+}
+
+#content h2 {
+  font-size: 2em;
+}
+
 @media only screen and (max-width: 700px) {
   #page-index #title-wrapper {
     font-size: 2rem;
@@ -317,7 +329,7 @@ body #page-index {
     grid-gap: 0;
   }
   
-  #menu>a {
+  #menu > a {
     padding-top: 0;
   }
 }
